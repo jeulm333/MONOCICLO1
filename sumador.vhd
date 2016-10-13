@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date:    20:01:46 10/12/2016 
+-- Create Date:    21:38:07 10/11/2016 
 -- Design Name: 
--- Module Name:    IM - Behavioral 
+-- Module Name:    sumador - Behavioral 
 -- Project Name: 
 -- Target Devices: 
 -- Tool versions: 
@@ -29,16 +29,18 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity IM is
-    Port ( direccion : in  STD_LOGIC_VECTOR (31 downto 0);
-           instruccion : out  STD_LOGIC_VECTOR (31 downto 0);
-           reset : in  STD_LOGIC);
-end IM;
+entity sumador is
+    Port ( entrada1 : in  STD_LOGIC_VECTOR (31 downto 0);
+           entrada2 : in  STD_LOGIC_VECTOR (31 downto 0);
+           salida : out  STD_LOGIC_VECTOR (31 downto 0));
+end sumador;
 
-architecture Behavioral of IM is
+architecture Behavioral of sumador is
 
 begin
 
+    
+	 
 
 end Behavioral;
 

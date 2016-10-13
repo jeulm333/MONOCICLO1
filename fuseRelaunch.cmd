@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -o "C:/Users/usuario pc/Desktop/LORE/Nueva carpeta/procesadormonocicloLDS/test_Sumador_isim_beh.exe" -prj "C:/Users/usuario pc/Desktop/LORE/Nueva carpeta/procesadormonocicloLDS/test_Sumador_beh.prj" "work.test_Sumador" 
+-intstyle "ise" -incremental -o "C:/Users/usuario pc/Desktop/LORE/Nueva carpeta/procesadormonocicloLDS/sumador_isim_beh.exe" -prj "C:/Users/usuario pc/Desktop/LORE/Nueva carpeta/procesadormonocicloLDS/sumador_beh.prj" "work.sumador" 
