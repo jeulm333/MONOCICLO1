@@ -1,8 +1,8 @@
-----------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date:    20:03:27 10/12/2016 
+-- Create Date:    12:32:24 10/10/2016 
 -- Design Name: 
 -- Module Name:    memoriaInstrucciones - Behavioral 
 -- Project Name: 
@@ -19,6 +19,8 @@
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+use std.textio.all;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -32,14 +34,12 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity memoriaInstrucciones is
     Port ( direccion : in  STD_LOGIC_VECTOR (31 downto 0);
            instruccion : out  STD_LOGIC_VECTOR (31 downto 0);
-           reset : in  STD_LOGIC);
+           reset : in  STD_LOGIC );
 end memoriaInstrucciones;
 
+architecture Behavioral of memoriaInstrucciones is
 
-
-architecture arq_memoriaInstrucciones of memoriaInstrucciones is
-
-	type rom_type is array (0 to 31) of std_logic_vector (31 downto 0);
+type rom_type is array (0 to 31) of std_logic_vector (31 downto 0);
 	
 	impure function InitRomFromFile (RomFileName : in string) return rom_type is
 	
@@ -57,20 +57,17 @@ architecture arq_memoriaInstrucciones of memoriaInstrucciones is
 	end function;
 	signal instructions : rom_type := InitRomFromFile("programa.data");
 
-		
+
 begin
-
-	process(direccion, reset, instructions)
-	begin
-		if(reset = '1')then
-			instruccion <= (others=>'0');
-		else
-			instruccion <= instructions(conv_integer(direccion(4 downto 0)));
-		end if;
-
-	end process; 
-
-end arq_memoriaInstrucciones;
-
-
+	process(reset,direccion, instructions)
+	begin		
+			if(reset = '1')then
+				instruccion <= (others=>'0');
+			else
+				instruccion <= instructions(conv_integer(direccion(5 downto 0)));
+			end if;
+		
+	end process;
+	
+end Behavioral;
 
